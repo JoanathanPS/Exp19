@@ -24,7 +24,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tests
-  	run: pytest app/tests
+        run: pytest app/tests
 
   docker:
     name: Build and Push Docker Image
@@ -49,6 +49,6 @@ jobs:
         with:
           context: ./app
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/exp19-app:latest
+          tags: joanathanpackiasingh/exp19-app:latest
           build-args: |
             APP_VERSION=${{ github.sha }}
